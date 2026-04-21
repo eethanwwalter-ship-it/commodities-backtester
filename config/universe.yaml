@@ -1,0 +1,73 @@
+# Commodity universe and data settings.
+#
+# `bloomberg_root` is the generic futures ticker prefix. Bloomberg's generic
+# tickers shift to the next contract on expiry (e.g., "CL1 Comdty" always
+# refers to the front-month WTI contract). We pull gen1..gen3 and manage
+# the roll ourselves to control for the roll yield.
+
+commodities:
+  CL:
+    name: WTI Crude Oil
+    exchange: NYMEX
+    bloomberg_root: CL
+    bloomberg_yellow_key: Comdty
+    contract_months: [F, G, H, J, K, M, N, Q, U, V, X, Z]  # monthly
+    tick_size: 0.01
+    contract_size: 1000         # barrels
+    currency: USD
+    sector: energy
+    sub_sector: crude
+
+  CO:
+    name: Brent Crude Oil
+    exchange: ICE
+    bloomberg_root: CO
+    bloomberg_yellow_key: Comdty
+    contract_months: [F, G, H, J, K, M, N, Q, U, V, X, Z]
+    tick_size: 0.01
+    contract_size: 1000
+    currency: USD
+    sector: energy
+    sub_sector: crude
+
+  NG:
+    name: Henry Hub Natural Gas
+    exchange: NYMEX
+    bloomberg_root: NG
+    bloomberg_yellow_key: Comdty
+    contract_months: [F, G, H, J, K, M, N, Q, U, V, X, Z]
+    tick_size: 0.001
+    contract_size: 10000        # MMBtu
+    currency: USD
+    sector: energy
+    sub_sector: gas
+
+  HO:
+    name: NY Harbor ULSD (Heating Oil)
+    exchange: NYMEX
+    bloomberg_root: HO
+    bloomberg_yellow_key: Comdty
+    contract_months: [F, G, H, J, K, M, N, Q, U, V, X, Z]
+    tick_size: 0.0001
+    contract_size: 42000        # gallons
+    currency: USD
+    sector: energy
+    sub_sector: refined
+
+  XB:
+    name: RBOB Gasoline
+    exchange: NYMEX
+    bloomberg_root: XB
+    bloomberg_yellow_key: Comdty
+    contract_months: [F, G, H, J, K, M, N, Q, U, V, X, Z]
+    tick_size: 0.0001
+    contract_size: 42000
+    currency: USD
+    sector: energy
+    sub_sector: refined
+
+data_settings:
+  start_date: "2015-01-01"
+  max_contracts: 24             # depth of forward curve to pull
+  roll_method: calendar         # calendar | volume | oi (only calendar implemented)
+  roll_days_before_expiry: 5    # business days before front-month expiry

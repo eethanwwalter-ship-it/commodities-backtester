@@ -1,0 +1,9 @@
+pandas>=2.0.0
+numpy>=1.24.0
+pyarrow>=14.0.0
+pyyaml>=6.0
+requests>=2.31.0
+python-dateutil>=2.8.2
+
+# blpapi must be installed separately from Bloomberg:
+# https://www.bloomberg.com/professional/support/api-library/
