@@ -1,7 +1,7 @@
 # Systematic Energy Futures: A Multi-Signal Backtesting Framework
 
-**Author:** Ethan Tanner
-**Date:** April 2026
+**Author:** Ethan Walter
+**Date:** April 21, 2026
 
 ---
 
