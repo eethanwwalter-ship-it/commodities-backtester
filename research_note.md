@@ -70,7 +70,7 @@ Several design choices were made for tractability that would need to be refined 
 
 ## Repository
 
-The full codebase, including six smoke tests with synthetic data and the real-data backtest, is available at: github.com/[username]/commodities-backtester
+The full codebase, including six smoke tests with synthetic data and the real-data backtest, is available at: github.com/eethanwwalter-ship-it/commodities-backtester
 
 ## Architecture
 
